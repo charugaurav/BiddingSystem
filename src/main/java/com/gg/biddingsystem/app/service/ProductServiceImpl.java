@@ -1,24 +1,27 @@
-package Service;
+package com.gg.biddingsystem.app.service;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import models.Product;
+import com.gg.biddingsystem.app.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ProductRepository;
+import com.gg.biddingsystem.app.repository.ProductRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @Data
+@AllArgsConstructor
 @Service
 public class ProductServiceImpl implements ProductService {
+    @Autowired
     private final ProductRepository productRepository;
 
-    @Autowired
-    public ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
+//    @Autowired
+//    public ProductServiceImpl(ProductRepository productRepository) {
+//        this.productRepository = productRepository;
+//    }
 
     @Override
     public Product createProduct(Product product) {

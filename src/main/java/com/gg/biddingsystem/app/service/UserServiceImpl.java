@@ -1,8 +1,8 @@
-package Service;
+package com.gg.biddingsystem.app.service;
 
-import models.User;
+import com.gg.biddingsystem.app.models.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import repository.UserRepository;
+import com.gg.biddingsystem.app.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,13 +17,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> getUserById(Long userId) {
+    public Optional<AppUser> getUserById(Long userId) {
         return userRepository.findById(userId);
     }
 
     @Override
-    public User saveUser(User user) {
-        return userRepository.save(user);
+    public AppUser saveUser(AppUser appUser) {
+        return userRepository.save(appUser);
     }
 }
 

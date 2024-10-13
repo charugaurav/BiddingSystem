@@ -1,6 +1,6 @@
-package repository;
+package com.gg.biddingsystem.app.repository;
 
-import models.Product;
+import com.gg.biddingsystem.app.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

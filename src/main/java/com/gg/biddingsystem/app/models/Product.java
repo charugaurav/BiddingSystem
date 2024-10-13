@@ -1,4 +1,4 @@
-package models;
+package com.gg.biddingsystem.app.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

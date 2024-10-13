@@ -1,10 +1,7 @@
-package controller;
+package com.gg.biddingsystem.app.controller;
 
-import Service.ProductService;
-import jakarta.persistence.Access;
-import lombok.AllArgsConstructor;
-import models.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.gg.biddingsystem.app.service.ProductService;
+import com.gg.biddingsystem.app.models.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@AllArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping("/api/products")
 public class ProductController {
-
-    @Autowired
     private final ProductService productService;
+
+    ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {

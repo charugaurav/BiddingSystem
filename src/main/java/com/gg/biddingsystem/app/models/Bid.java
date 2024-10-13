@@ -1,7 +1,6 @@
-package models;
+package com.gg.biddingsystem.app.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,11 +18,12 @@ public class Bid {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
+    @OneToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private AppUser bidder;
+
     private Double bidAmount;
     private LocalDateTime bidTime;
-
-    public Bid(Product product, Double bidAmount, LocalDateTime now) {
-    }
 
     // Additional fields for relationships and auditing
 }
